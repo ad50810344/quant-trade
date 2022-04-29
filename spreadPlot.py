@@ -1,4 +1,5 @@
 import csv
+from re import X
 from tqsdk import TqApi, TqAuth, TqAccount, tafunc
 import numpy as np
 import pandas as pd
@@ -52,7 +53,6 @@ class analyse:
             writer.writeheader()
             trades1 = self.api.get_trade()
             for k, v in trades1.items():
-                # writer.writerow([k, v])
                 if v["instrument_id"] == self.legA or v["instrument_id"] == self.legB :
                     v["trade_date_time"] = tafunc.time_to_str(v["trade_date_time"])
                     # k = v["trade_date_time"]
@@ -68,12 +68,9 @@ class analyse:
                         # "bidPrice":
                         # "sendPrice": 
                     }
-                    # print(newTrades)
                     writer.writerow(newTrades)
-                    # sleep(3)
                 # else: 
                 #     print("no items")
-
         header2 = ["instrument", "direction", "offset", "insertPrice", "tradePrice",
                      "volumeOrigin", "volumeLeft", "insert_time", "lastMessage"]
         with open("orders.csv", "w", newline="", encoding="utf-8") as csv_file:
@@ -99,7 +96,6 @@ class analyse:
                         # "bidPrice":
                         # "tradePrice": 
                     }
-                    # print(newInserts)
                     writer.writerow(newInserts)
             #     else:
             #         print("no orders1")
@@ -112,20 +108,18 @@ class analyse:
         # return
 
     def handleOrdersTrades(self):    
-        file = pd.read_csv("trades.csv")
-        df = pd.DataFrame(file)
-        dfIndex = df.sort_values("trade_time")
-        print(df)
+        dfTrades = pd.read_csv("trades.csv")
+        dfSort = dfTrades.sort_values("trade_time", ignore_index=True)
+        dfSort.to_csv("trades.csv")
 
-        file = pd.read_csv("orders.csv")
-        df = pd.DataFrame(file)
-        dfIndex = df.sort_values("insert_time")
+        dfOrders = pd.read_csv("orders.csv")
+        dfSortOrders = dfOrders.sort_values("insert_time", ignore_index= True)
+        dfSortOrders.to_csv("orders.csv")
         pass
 
-
 def main():
-    simnowAccout = TqAccount(broker_id= "simnow", account_id= "", password= "")
-    api = TqApi(account= simnowAccout, auth= TqAuth( "", ""))
+    simnowAccout = TqAccount(broker_id= "simnow", account_id= "138411", password= "15221shuai")
+    api = TqApi(account= simnowAccout, auth= TqAuth( "15221624883", "15221shuai"))
     legA = "ag2207"
     legB = "ag2206"
 
