@@ -1,0 +1,8 @@
+20220429)
+异常处理：
+    1.行情接收中断，控制台ctrl + z,检查config.json/exit_time
+    2.交易报单static memory not enough,统计报单上限
+    3.交易中退出，
+        running.config--false
+        insertOrder--oid<=0,检查订单.config
+        cancelCount1>= cancelLimit1
