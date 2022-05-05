@@ -63,8 +63,8 @@
 	50ms处，如果当前没有持仓，开空仓
 半小时内，如果strtegy1盈利ma<0,资金分配*0.5：
 
-20220429)
-异常处理：
+20220429
+    总结程序异常处理：
     1.行情接收中断，控制台ctrl + z,检查config.json/exit_time
     2.交易报单static memory not enough,统计报单上限
     3.交易中退出，
@@ -72,6 +72,9 @@
         insertOrder--oid<=0,检查订单.config
         cancelCount1>= cancelLimit1
 
+20220430：
+    1.成交统计，报单统计用tqsdk导出成交记录；
+    
 20220504：
     1.完成spreadPlot.py --分类筛选交易明细到csv
     问题：matplotlib.animation使用
