@@ -69,3 +69,9 @@ class ContCalendar(object):
     def _get_cont_underlying_on_date(self, dt: datetime):
         df = self.df.loc[self.df.date.ge(dt), :]
         return df.iloc[0:1]
+
+import calendar
+from datetime import datetime
+now = datetime.now()
+cld = calendar.ConCalendar(start_dt= date(2022,1,1), end_dt=now.date())
+print(cld.df.iloc[-1,:])
