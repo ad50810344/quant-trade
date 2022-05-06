@@ -116,6 +116,7 @@ class analyse:
         dfSortOrders = dfOrders.sort_values("insert_time", ignore_index= True)
         dfSortOrders.to_csv("orders.csv")
         pass
+    
 def ui(api):
     klines1 = api.get_tick_serial("SHFE.ag2207", data_length = 1800)
     klines2 = api.get_tick_serial("SHFE.ag2206", data_length = 1800)
