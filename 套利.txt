@@ -88,3 +88,6 @@
     2.完成价差实时显示,spreadPlot().ui()
     3.ta.py待整理
 
+20220507:
+    1.了解matplotlib.backend()
+    2.添加clsForm.py到spreadPlot.py，统计结果多图表展示
