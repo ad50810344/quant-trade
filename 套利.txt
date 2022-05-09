@@ -91,3 +91,8 @@
 20220507:
     1.了解matplotlib.backend()
     2.添加clsForm.py到spreadPlot.py，统计结果多图表展示
+    
+20220509:
+    1.spreadPlot.py待整理
+    2.夜盘解决模拟账户，查询订单状态出错问题
+    3.运行实盘程序，整理今日成交信息
