@@ -1,0 +1,240 @@
+Bookmarks
+书签栏
+tqsdk.TqApi - 框架及核心业务 — TianQin Python SDK 3.2.1 文档
+卢旺杉 - 知乎
+Python time time()方法 | 菜鸟教程
+别再说Python慢(内置方法篇) - 知乎
+量化交易系统框架搭建的过程中，从回测到接入实盘，有哪些模块是可以异步或者多线程、多进程设计的？ - 知乎
+高频交易系统怎样在多线程和端口通讯之间取舍？ - 知乎
+multiprocessing --- 基于进程的并行 — Python 3.10.2 文档
+C++ 教程 | 菜鸟教程
+sklearn中文文档
+数字货币高频：market taking vs market making - 知乎
+填坑 | Quant程序化交易系统开发笔记 番外篇 - CTP接入 - 知乎
+python调用.so - fariver - 博客园
+(2条消息) 什么是.so文件_老王不让用的博客-CSDN博客_.so文件
+linux 中的.so和.a文件 - 心田居士 - 博客园
+Python:使用ctypes库调用外部DLL - 无常 - 博客园
+(2条消息) linux下后缀为so的文件怎么打开,linux中.so后缀的文件怎么使用啊_钱粮胡同的博客-CSDN博客
+Linux 动态链接库(.so)的使用 - 旭东的博客 - 博客园
+(2条消息) ubuntu vscode c++生成so及调用调试so包_cdknight_happy的专栏-CSDN博客_vscode 编译so
+动态链接库使用举例 - 云+社区 - 腾讯云
+python调用c++利器--pybind11 - 知乎
+(2条消息) C++连接CTP接口实现简单量化交易（行情、交易、k线、策略）_踏莎行的博客-CSDN博客_ctp接口
+Python-CTP PyCTP 接口 | Shi Zhuolin's Blog
+混合编程：如何用python11调用C++ - 知乎
+Python调用DLL动态链接库——ctypes使用 - 蛋片鸡 - 博客园
+(2条消息) Python mutilprocess模块之第二种创建进程方法--继承Process类_zbrj12345的博客-CSDN博客
+(2条消息) C++11中头文件chrono的使用_网络资源是无限的-CSDN博客_chrono.h
+pybind11—类(继承，重载，枚举) - 简书
+Python并行编程(十二)：进程同步 - 杜先生的博客 - 博客园
+(2条消息) Python中取整函数汇总_爱吃干脆面的小潘-CSDN博客_python取整函数
+对python async与await的理解 - xinghun85 - 博客园
+如何优化 Python 爬虫的速度？ - 知乎
+CTP_LINUX_LINUX下量化交易系统的实现_哔哩哔哩_bilibili
+(2条消息) C++ 类、类实例化对象、多文件编程_xueHui-CSDN博客
+(2条消息) 动态链接库（dll）文件解析_shifenglv的博客-CSDN博客_.dll文件
+(2条消息) typedef介绍_liitdar的博客-CSDN博客_typedef
+(2条消息) #define的常见用法_李威的博客-CSDN博客_#define
+(2条消息) C++连接CTP接口实现简单量化交易（行情、交易、k线、策略）_踏莎行的博客-CSDN博客_ctp接口
+GitHub - Luomin1993/test_CTP: 仅仅测试CTP接口的小程序(Linux)
+GitHub - xmduhan/ctp_examples: ctp api examples project
+ctp_examples/OrderInsert.sell.open at master · xmduhan/ctp_examples · GitHub
+::::::上海期货信息技术有限公司::::::
+(3条消息) Makefile教程（绝对经典，所有问题看这一篇足够了）_GUYUEZHICHENG的博客-CSDN博客_makefile
+(3条消息) 信号量sem_init,sem_wait,sem_post_我的梦-CSDN博客_sem_wait
+test_CTP/MdSpi.h at master · Luomin1993/test_CTP · GitHub
+(3条消息) c语言中#include 路径查找问题_xiaoshengqdlg的专栏-CSDN博客_include路径
+(3条消息) Linux环境变量设置方法总结 PATH、LD_LIBRARY_PATH_希哈科技的博客-CSDN博客_ld_library_path
+(3条消息) C语言中char*和char[]用法区别分析_edward_zcl的博客-CSDN博客_char[]
+"undefined reference to XXX"问题总结 - 知乎
+(3条消息) Linux中error while loading shared libraries错误解决办法_hankerbit的博客-CSDN博客_error while
+(3条消息) #include的路径及顺序_u013635579的博客-CSDN博客_include 路径
+(3条消息) C语言中的多线程简介_Hemingway_Hoo的博客-CSDN博客_c 多线程
+SimNow通知
+SimNow仿真交易【官方网站】
+SIMNOW CTP穿透式监管实施后对外接入地址变更【量化交易吧】_百度贴吧
+#pragma once用法总结 - 世纪强风 - 博客园
+(4条消息) #include <tchar.h> 是什么意思_数据库天地-CSDN博客
+[C] 跨平台使用TCHAR——让Linux等平台也支持tchar.h，解决跨平台时的格式控制字符问题，多国语言的同时显示（兼容vc/gcc/bcb，支持Windows/Linux/Mac） - zyl910 - 博客园
+linux没有 conio.h解决的方式 - gcczhongduan - 博客园
+新建文件夹
+.h和.cpp文件名必须一致是吗？-CSDN社区
+(4条消息) char类型的实参与char*类型的形参不兼容_数据类型之间的转换_有木桑的博客-CSDN博客
+Projects · Dashboard · GitLab
+Projects · Explore · GitLab
+C++ 中的 inline 用法 | 菜鸟教程
+C++11/14 constexpr 用法 - 简书
+(4条消息) c++ auto基本用法_lwgkzl的博客-CSDN博客_auto c++
+arbitrage · GitLab
+(4条消息) c++编译器常见warning与解决方案总结_歌昔的博客-CSDN博客
+(4条消息) linux下c++sleep函数_chent86的博客-CSDN博客_c++ linux sleep
+C++ 从函数返回指针 | 菜鸟教程
+C语言函数返回指针方法 - xbook_ben - 博客园
+(4条消息) C++中const char*, string 与char*的转化_xiaoxiaoxiao的博客-CSDN博客_c++中const char
+(4条消息) C++ 字符串、string、char *、char[]、const char*的转换和区别_Stay Hungry-CSDN博客_c++ char 字符串
+(4条消息) C++ 字符串、string、char *、char[]、const char*的转换和区别_Stay Hungry-CSDN博客_c++ char 字符串
+c++ 中 char 与 string 之间的相互转换问题 - Hello_BeautifulWorld - 博客园
+(4条消息) c++的char[]和char*的区别_大猪的博客-CSDN博客_c++ char*
+(4条消息) c语言中的protect_深入理解C++中public、protected及private用法_泰国旅行的博客-CSDN博客
+(4条消息) C++ 基类构造函数带参数的继承方式及派生类的初始化_一首小夜曲-CSDN博客_c++ 基类构造函数
+(4条消息) C++ 继承 6--2向基类构造函数传递参数方法一(注意对比6--1的运行结果)_Paulliam的博客-CSDN博客
+(4条消息) [wine5.0] 解决wine所有软件乱码（中文不显示）问题_cxrshiz7890的博客-CSDN博客_wine 乱码
+(4条消息) C++中的namespace（using namespace）的详细理解_编程_随笔点滴-CSDN博客_usingnamespace
+(4条消息) C/C++：函数模板与类模板_jhe_zhang-blog-CSDN博客
+(4条消息) C++类模板和模板类_Hello World-CSDN博客_c++ 模板类
+C++ 模板 | 菜鸟教程
+C++类模板（模板类）详解
+【C/C++开发】模板类 - ZhangPYi - 博客园
+c/c++获取系统时间函数 - 优秀afa - 博客园
+c++之元组std::tuple常见用法 - mohist - 博客园
+C/C++从零开始的cmake教程_C 语言_脚本之家
+(4条消息) C/C++学习笔记-CMake教程_叔叵谩的博客-CSDN博客_c++ cmake
+(4条消息) C/C++ cmake教程_xfyangle的博客-CSDN博客
+(4条消息) 命令行编译C++（Linux下、Windows下）_leonliu06的博客-CSDN博客
+(4条消息) C++17之std::visit_janeqi1987的专栏-CSDN博客_c++ visit
+C++11 静态断言—static_assert - kaizen - 博客园
+(4条消息) c++ 17 中的变量std::variant_序冢--磊的博客-CSDN博客_std::variant
+(4条消息) C++11的模板类型判断——std::is_same和std::decay_尘中远的程序开发记录-CSDN博客_std::is_same
+(4条消息) std::vector使用简介_tpriwwq的专栏-CSDN博客_std::vector
+(4条消息) C++中push_back()函数_snowcatvia的博客-CSDN博客_push_back
+(4条消息) 纳秒与微秒的计算_guangod的博客-CSDN博客_微秒 纳秒
+cpprl always_false_v_百度搜索
+(4条消息) C++ 注释_张中华的博客-CSDN博客
+C++ ofstream和ifstream详细用法 - 蒲公英的花 - 博客园
+fstream类总结 - 罗茜 - 博客园
+(4条消息) C++读取CSV文件_chenlin41204050的博客-CSDN博客_c++读取csv
+(4条消息) C/C++二维数组总结_哆啦A瑶的博客-CSDN博客_c++ 二维数组
+(4条消息) pandas 如何删掉第一行_Pandas-数据筛选_丁当响的博客-CSDN博客
+(4条消息) C++中resize函数的用法_贾作真时真亦贾的博客-CSDN博客_resize函数
+(4条消息) pandas DataFrame表格(列)拼接（concat,append,join,merge）_wsp_1138886114的博客-CSDN博客_pandas 列拼接
+python中的数据写入(to_csv)、将结果写入excel多个sheet中(to_excel) - beyondChan - 博客园
+(4条消息) 在vscode中报错：End of file expected.问题_m0_47802926的博客-CSDN博客
+(4条消息) 如何在Python中读取和写入JSON文件_culing2941的博客-CSDN博客
+python 修改json文件(含中文) - wolbo - 博客园
+python读写json文件 - Bigberg - 博客园
+(4条消息) C++解析JSON格式数据_liangchunjiang的博客-CSDN博客_c++解析json字符串
+undefined reference to XXX 问题原因 - DoubleLi - 博客园
+C++之JSON文件的操作 - 知乎
+G++ 用法详解(转载)_静止不要动_新浪博客
+(4条消息) linux g++ 链接器（一）基础概念_幸福在路上-CSDN博客
+(4条消息) gcc/g++ -L和-l命令参数_New life-CSDN博客_-l g++
+(4条消息) C/C++之makefile写法_ZONGXP的博客-CSDN博客_c++ makefile
+(5条消息) C/C++通用Makefile_Witton的专栏-CSDN博客
+CTPtest/main.cpp at master · tashaxing/CTPtest · GitHub
+高频交易只挣不赔，那么挣的钱从哪来？ - 知乎
+(5条消息) python 处理json数据_Joker2019.-CSDN博客
+(5条消息) 一文解决python的GUI--python程序员必会GUI库-神器PySimpleGUI良心总结_realliyuhao的博客-CSDN博客
+(5条消息) python3调用cpp的方法——python调用so_springlustre的专栏-CSDN博客_python调用c++ so
+十分钟写一个python软件，Python最好学习的gui库-pysimplegui - 知乎
+python库介绍-PySimpleGUI-简单的GUI开发工具 - 知乎
+(5条消息) 【现代C++】性能控的工具箱之string_view_weixin_34060741的博客-CSDN博客
+fstream (C++) - 简书
+(5条消息) Python中JSON的基本使用_Just do it !-CSDN博客_json python
+(5条消息) Python 自动化库介绍 PySimpleGUI_软件测试君的博客-CSDN博客_simplegui
+Screenshots demos - PySimpleGUI
+PySimpleGUI 中文手册（常用部分） | Python 技术论坛
+Python之list的创建以及使用 - 旷野足迹 - 博客园
+(5条消息) python中的asyncio使用详解_宇宙浪子的专栏-CSDN博客_asyncio python
+Python tkinter库将matplotlib图表显示在GUI窗口上，并实时更新刷新数据 - 蔡子CaiZi - 博客园
+pyqtgraph--动态更新数据 - 天子骄龙 - 博客园
+gui动态刷新数据_百度搜索
+简介 - pyecharts - A Python Echarts Plotting Library built with love.
+期货交易所张江机房高频交易FPGA硬件柜台介绍 - 知乎
+客户端应用编程接口 – 易达交易系统
+上海期货交易所首页
+CMakeLists.txt文件编写实例 - 赵思凌 - OSCHINA - 中文开源技术交流社区
+参数传递 - pyecharts - A Python Echarts Plotting Library built with love.
+cmake使用方法详解 - DoubleLi - 博客园
+(5条消息) c++ 关联容器用法详解（set与map）_帅比王的博客-CSDN博客_关联容器
+(5条消息) C/C++STL常用容器用法总结_帅比王的博客-CSDN博客_c 容器
+(5条消息) C++ 字典 map详解_lh_lyh的博客-CSDN博客_c++ 字典
+(5条消息) C++ 函数模板_Timplan的博客-CSDN博客_c++ 模板函数
+私募数据中心-国内私募基金公司产品经理数据平台-私募排排网
+(5条消息) 运算符重载（看完这篇彻底掌握重载问题）_海盗船长没有船y的博客-CSDN博客_运算符重载
+C++ vector 容器浅析 | 菜鸟教程
+(5条消息) C/C++ 的*和& 详解_py粉的博客-CSDN博客_& c++
+C++ *和& - 赖兴宇 - 博客园
+(5条消息) ubuntu下cmake管理c++工程_bestrivern的博客-CSDN博客_ubuntu运行c++工程
+Cmake命令之add_subdirectory介绍 - 简书
+【转】在linux下使用gcc/g++编译多个.h文件 - 十里坡剑神—》》》》 - 博客园
+(5条消息) struct的初始化及其构造函数_THEALVA的博客-CSDN博客_struct 构造函数
+(5条消息) 简单了解C++中struct/class构造函数_INVinci_BY的博客-CSDN博客
+(5条消息) linux定时任务每小时_linux定时任务cron HelloWorld_weixin_39946239的博客-CSDN博客
+(5条消息) c++中STL库 简介 及 使用说明_tanqiuwei的博客-CSDN博客_c++ stl库
+智能指针的辅助函数 std::make_shared 和 std::enable_shared_from_this - 阅微堂
+(5条消息) C++模板总结_Dream_yz的博客-CSDN博客_c++模板
+(5条消息) C++中STL用法超详细总结_HUST_Miao的博客-CSDN博客_c++ stl
+(5条消息) C++第三方常用库_Geek.Fan的博客-CSDN博客
+(5条消息) 著名的C/C++框架和第三方库_nnzznnzz的博客-CSDN博客_c++第三方库
+cppreference.com
+(5条消息) C++结构体指针 常用用法及注意事项_lwgkzl的博客-CSDN博客_c++ 结构体指针
+C++ 多线程 | 菜鸟教程
+关于c++中sleep_for函数的总结分析 - 碧海无波，细水长流 - 博客园
+(5条消息) C++ 并发编程（C++11 到 C++17 ）_程序员编程指南的博客-CSDN博客
+Github 简明教程 | 菜鸟教程
+15221624883/quantityTrade
+15221624883
+程序构建-菜鸟笔记
+Stack Overflow - Where Developers Learn, Share, & Build Careers
+CTPDailyTrader/main.cpp at master · ssh352/CTPDailyTrader
+中泰期货-软件下载
+Cmake更新_hhaijiuwo的博客-CSDN博客_cmake更新
+Quant 资源大总结 - 哔哩哔哩
+常见算法交易（Algorithmic Trading） - 知乎
+(1条消息) 机器学习与tensorflow入门教程（任何人都能看懂）_周雄伟的博客-CSDN博客_tensorflow菜鸟教程
+力扣（LeetCode）官网 - 全球极客挚爱的技术成长平台
+温故十大经典排序算法 - 知乎
+排序算法整合（冒泡，快速，希尔，拓扑，归并） - 知乎
+算法讲解之广度优先搜索 - 知乎
+功能强大的python包（五）：sklearn - 知乎
+每个程序员都应该知道的 15 个算法 - 知乎
+(6条消息) 【数据结构】八种常见数据结构介绍_非晚非晚的博客-CSDN博客_常用数据结构
+(6条消息) 九大常见数据结构_hanjq_code的博客-CSDN博客_常见数据结构
+(6条消息) 数据结构与算法（python版）_Mr DaYang的博客-CSDN博客_python数据结构与算法
+(6条消息) 机器学习算法-十大常用算法_无缘浪子党的博客-CSDN博客_机器学习算法
+多图，一文了解 8 种常见的数据结构 - 知乎
+通俗理解数据结构 - 知乎
+从0开始认识数据结构与算法 - 知乎
+机器学习就等同于算法吗？ - 知乎
+曾伊言 - 知乎
+(6条消息) 强化学习 马尔可夫决策过程（MDP）是什么_软件工程小施同学的博客-CSDN博客_马尔可夫决策过程
+第二讲 马尔可夫决策过程 - 知乎
+针对日内高频期货交易的强化学习策略 - 知乎
+【文献调研】强化学习+资产组合/交易执行 - 知乎
+6.清华大学深度强化学习用于量化交易论文 - 知乎
+张红庆：高频交易成交数据的挖掘与基于机器学习的策略优化 - 知乎
+机器学习在市场微观结构和高频交易中的应用 - 知乎
+HFT系列】基于机器学习的动态高频限价订单簿框架（Tick数据） - 知乎
+机器学习常用的网站以及资源，都在这里了 - 知乎
+scikit-learn中文社区
+案例-scikit-learn中文社区
+TensorFlow模型 — 简单粗暴TensorFlow 0.3 beta 文档
+这是一份超全机器学习&深度学习网站资源清单，请收藏！（文末有福利） - 知乎
+神经网络中数学知识简易梳理 - 知乎
+深度盘点：机器学习、深度学习面试知识点3W字汇总 - 知乎
+(6条消息) 【重磅推荐】哥大开源“FinRL”: 一个用于量化金融自动交易的深度强化学习库_深度强化学习实验室的博客-CSDN博客
+常见强化学习方法总结 - 知乎
+【实践】基于DDPG算法的股票量化交易 - 知乎
+金融深度强化学习能在金融市场代替人进行交易吗？ - 知乎
+「何须天授？彼可取而代也」基于PyTorch的强化学习库“小雅” - 知乎
+GitHub - AI4Finance-Foundation/FinRL: FinRL: The first open-source project for financial reinforcement learning. Please star. 🔥
+将强化学习应用到量化投资中实战篇（学习模块开发下） - 知乎
+手把手教你用强化学习框架做量化交易：FinRL - 知乎
+(6条消息) TensorFlow的使用_菜鸟Octopus的博客-CSDN博客_tensorflow使用
+矩阵运算与常用矩阵 - 知乎
+什么是梯度下降法？ - 知乎
+Tensorflow eager execution 模式 - 知乎
+强化学习在量化投资中的应用概览 - 知乎
+典型的深度强化学习算法 - 知乎
+11.深度强化学习用于量化交易 - 知乎
+随机漫步的黄瓜 - 知乎
+PyTorch简介 - PyTorch官方教程中文版
+(7条消息) Python的namedtuple使用详解_行者无疆兮的博客-CSDN博客_namedtuple
+什么是强化学习（马尔可夫决策过程） - 知乎
+量化仔 - 知乎
+Coollen.MMX - 知乎
+(7条消息) 程序员每天都在使用的数据结构_Osean_li的博客-CSDN博客_程序使用的主要数据结构
+pyStrategy.strategy.DMAStrategy — PythonGo 1 文档
+Python——枚举（enum） - 寻觅beyond - 博客园
+学习笔记，简单的期货回测代码 - 知乎
