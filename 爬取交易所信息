@@ -1,0 +1,113 @@
+from datetime import date
+import xlwt
+import requests
+import os
+import json
+
+#0331
+def loadSettlement(mydate):
+    url = 'http://www.shfe.com.cn/data/instrument/Settlement' + mydate + '.dat'
+    path = "/home/DuShuai/arbitrage-trade/shfeWebsite/" + url.split('/')[-1]
+    r = requests.get(url)
+
+    with open(path, 'wb') as f:
+        f.write(r.content)
+        f.close()
+
+    file = open('/home/DuShuai/arbitrage-trade/shfeWebsite/Settlement' + mydate + '.dat', 'r', encoding='UTF-8')
+    js = file.read()
+    data = json.loads(js)
+    file.close()
+
+    wb1 = xlwt.Workbook()
+    sheet = wb1.add_sheet("Sheet1", cell_overwrite_ok=True)
+    title = ['商品交割费率', '商品交割费额', '平今折扣率', '合约代码', '套保买保证金率', '结算价',
+            '套保卖保证金率', '投机买保证金率', '投机卖保证金率', '交易手续费率', '交易手续费额', 
+            '交易日期','数据更新时间', 'id']
+    for i in range(len(title)):
+        sheet.write(0, i, title[i])
+    j = 0
+    for line in data["Settlement"]:
+        dataV = list(data["Settlement"][j].values())
+        j = j + 1
+        for k in range(len(dataV)):
+            if isinstance(dataV[k], str):
+                dataV[k] = dataV[k].strip()
+            sheet.write(j, k, dataV[k])
+    wb1.save("/home/DuShuai/arbitrage-trade/shfeWebsite/Settlement" + mydate + '.xls')
+
+def loadContractDailyTradeArgument(mydate):
+    url = 'http://www.shfe.com.cn/data/instrument/ContractDailyTradeArgument' + mydate + '.dat'
+    path = "/home/DuShuai/arbitrage-trade/shfeWebsite/" + url.split('/')[-1]
+    r = requests.get(url)
+
+    with open(path, 'wb') as f:
+        f.write(r.content)
+        f.close()
+
+    file = open('/home/DuShuai/arbitrage-trade/shfeWebsite/ContractDailyTradeArgument' + mydate + '.dat', 'r', encoding='UTF-8')
+    js = file.read()
+    data = json.loads(js)
+    file.close()
+
+    wb1 = xlwt.Workbook()
+    sheet = wb1.add_sheet("Sheet1", cell_overwrite_ok=True)
+    title = ['套保买保证金率', '套保卖保证金率', '合约代码', '跌停板幅度', 'priceLimits', '投机买保证金率',
+            '投机卖保证金率', '交易日期','数据更新时间', '涨停板幅度', 'id']
+    for i in range(len(title)):
+        sheet.write(0, i, title[i])
+    j = 0
+    for line in data["ContractDailyTradeArgument"]:
+        dataV = list(data["ContractDailyTradeArgument"][j].values())
+        j = j + 1
+        for k in range(len(dataV)):
+            if isinstance(dataV[k], str):
+                dataV[k] = dataV[k].strip()
+            sheet.write(j, k, dataV[k])
+    wb1.save("/home/DuShuai/arbitrage-trade/shfeWebsite/ContractDailyTradeArgument" + mydate + '.xls')
+
+def loadContractBaseInfo(mydate):
+    url = 'http://www.shfe.com.cn/data/instrument/ContractBaseInfo' + mydate + '.dat'
+    path = "/home/DuShuai/arbitrage-trade/shfeWebsite/" + url.split('/')[-1]
+    r = requests.get(url)
+
+    with open(path, 'wb') as f:
+        f.write(r.content)
+        f.close()
+
+    file = open('/home/DuShuai/arbitrage-trade/shfeWebsite/ContractBaseInfo' + mydate + '.dat', 'r', encoding='UTF-8')
+    js = file.read()
+    data = json.loads(js)
+    file.close()
+
+    wb1 = xlwt.Workbook()
+    sheet = wb1.add_sheet("Sheet1", cell_overwrite_ok=True)
+    title = ['挂牌基准价', '到期日', '最后交易日', '合约代码', '上市日', '开始交割日', '交易日期', '数据更新时间', 'id']
+    for i in range(len(title)):
+        sheet.write(0, i, title[i])
+    j = 0
+    for line in data["ContractBaseInfo"]:
+        dataV = list(data["ContractBaseInfo"][j].values())
+        j = j + 1
+        for k in range(len(dataV)):
+            if isinstance(dataV[k], str):
+                dataV[k] = dataV[k].strip()
+            sheet.write(j, k, dataV[k])
+    wb1.save("/home/DuShuai/arbitrage-trade/shfeWebsite/ContractBaseInfo" + mydate + '.xls')
+
+mydate = "20220331"
+loadSettlement(mydate)
+loadContractDailyTradeArgument(mydate)
+loadContractBaseInfo(mydate)
+
+
+ContractBaseInfo = "/home/DuShuai/arbitrage-trade/shfeWebsite/ContractBaseInfo" + mydate + '.dat'
+ContractDailyTradeArgument = "/home/DuShuai/arbitrage-trade/shfeWebsite/ContractDailyTradeArgument" + mydate + '.dat'
+Settlement = "/home/DuShuai/arbitrage-trade/shfeWebsite/Settlement" + mydate + '.dat'
+myFile = [ContractBaseInfo, ContractDailyTradeArgument, Settlement]
+for i in range(len(myFile)):
+    if os.path.exists(myFile[i]):
+        os.remove(myFile[i])
+    else:
+        print("no file:%s" % myFile[i])
+
