@@ -6,3 +6,4 @@ int main(){
     std::cout << "good" << std::endl;
     return 0;
 }
+#0712
