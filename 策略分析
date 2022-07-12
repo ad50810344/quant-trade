@@ -1,0 +1,328 @@
+20220617:
+1.股票行业轮动，是筛选预期高收益的行业，买入其中的股票，实质是看到该行业所有公司靠商品价格上涨带来了更高利润，或商品价格未上涨好的公司相对差的公司抢占更多市场资源带来更高利润，在此结果下根据此趋势追入更能盈利的公司或行业；
+2.期货海龟交易法，是根据价量判断将有趋势的商品，是对绝对价格的趋势追随；
+3.期货做市商交易，是对商品绝对价格的震荡交易；
+4.股票日内回转交易，是对股票做日内级别的高抛低吸的震荡交易；
+5.期货跨期套利，跨品种套利，是对商品之间相对价格的震荡交易或趋势追随交易；
+6.股票指数增强，是对持有能构成等价于指数的股票，通过股票之间的相对价格波动做额外的高抛低吸震荡交易；
+7.期货网格交易，是对商品绝对价格的震荡交易；
+8.股票多因子选股，是认为股票价格取决于预期收益率，通过规模、市值、盈利情况计算出预期收益率，比较行业中各公司的预期收益率，对预期收益率做绝对价格的高抛低吸的震荡交易；
+9.股票和期货alpha对冲，是利用指数现货和期货做相对价格下的基差，对基差做高抛低吸的震荡交易；
+10.股票布林带均值回归，是对股票做绝对价格的高抛低吸的震荡交易；
+11.股票小市值，是对股票影响因素中选取市值项，认为小市值股票具有价格上涨的结果，是对市值因素的抄底交易；
+12.期货菲阿里四价，R-Breaker，双均线策略，Dual Thrust是对商品绝对价格趋势的统计，做绝对价格的趋势交易；
+13.股票机器学习，是将股票的绝对价格等数据和衍生数据不做前提假设下分类和回归，与统计做类似的预测，根据预测出的结果做趋势追随交易。
+现有机器学习模型来看，用处在，提取主因子时用数据降维和聚类，线性问题用决策树和随机森林的树和概率图解决，解决小样本高维问题用统计学习，需要分类时用SVM等方法，需要系统正反馈修改时用强化学习和rnn等。
+总结来看，传统交易策略是使用量价信息，对其做出要么震荡交易要么趋势交易，进一步交易策略是通过机器学习和统计学找出等价于表象量价信息的信息，是对表象信息基本面方向的理解，对其做要么震荡交易要么趋势交易，量价信息更加表象但所有参与者都在使用，基本面信息更加本质但有滞后性，从量价信息中更细致的观察则是微观市场过程。无论那种市场过程，本质的过程则是，参与者之间博弈，因此现有策略角度看，根据量价信息参与其中，同时交易结果反过来反馈到参与者的交易行为，属于行为金融范畴，这是市场演变最根本的过程，也是策略形成依据。目前策略思路是按照强化学习来，通过套利参与到市场中，同时跟踪手中的交易结果(撤单速度和成交速度)探知对手行为来调整自己下一次交易，不断强化这个过程，可以得到最优的交易参数。开仓或平仓时统计出成交速度，作为后续逼近价格的条件，如果成交很迅速，则成交速度或撤单速度为6，下次等到平仓时若实时成交速度或撤单速度低于6，则逼近价格减少仓位，否则放开价格增加仓位。
+
+20220628
+强化学习可理解为反馈练习，策略信号作为action,触发更新state,实时返回reward,修改下一次action,在历史数据中，循环回测是找出最优reward之间loss的过程，loss最优化最小值时得出的参数作为下一次action,以此循环这一过程。使用卷积神经网络，目的在于预测给定action情况下，预测reward大小。
+
+20220629
+从原理上理解，强化学习可以在决策问题上根据历史数据经验得出历史数据中的最优解，使得在历史数据中表现最好。统计指标同样也可以通过多个条件找出最优的指标，使得在历史数据中表现最好。但是在未来使用中逐渐失效，原因是历史数据中未包括这种情况，而主观分析也是同样的道理，基于过去的经验在新的环境中，假如环境发生了变化，则过去的经验失效。究其原因，机器学习分析或主观分析都是同样的原因，因此得出的经验只是局部的经验，所以策略更有效关键在于，历史有效经验更长到覆盖所有情况，都需要更久的数据。
+更长的回测周期原因是，可以从所有行情中获取经验，而无论哪种行情，中间不变的是交易行为本身。因此从交易的角度来理解不同时期的行情，则把握住了核心法则，所有策略最核心的买卖决策过程是一样的。这一过程从做市角度看很正常，因为是从双方的角度同时理解。强化学习这种模式符合参与者决策过程，只要参与时间足够久，自我决策的特点使其是可以做到拟合主观交易者的，接下来重心放到这一思路研究上，落实到策略角度来看，主要有两部分，                                  
+无论何种策略，在交易上来看->矛盾在于对价格的看法，认为有趋势变动，则有利方追进，不利方回避->相互博弈最终是追求做到持续盈利->所以市场只有一个方向，就是正确的方向，
+以利润稳定且最大化为目标做策略，则追求震荡网格策略，网格策略需要价格和仓位两个参数，不对价格做出预测，缺点在于不适用单边走势，使用强化学习可以动态调整价格和仓位，在小波动率市场中重仓获取利润，转变为大波动率市场时相应扩大价格和降低仓位，如此循环往复经历整个行情。此策略是高频套利策略在绝对价格上的使用，且可扩展到其他策略上。以网格策略为主体，使用强化学习方法在历史数据中优化出最优的参数，中间过程为:跟踪市场波动率，当波动率很低时，把设计好的网格参数报出订单，同时用监督学习预测这一笔交易收益，然后观察策略表现，看实际收益和预测收益差值，当预测正确率很高后，保存这组交易参数，将其用于下一笔交易。这个思路符合正常交易逻辑i。
+
+20220630
+编程工具：
+快速学习数据结构的知识：线性数据结构->数组/链表/堆/栈/队列，非线性数据结构->树/图
+快速学习普通算法：查找->顺序查找/二分法查找/散列查找，排序->交换排序/选择排序/插入排序/归并排序
+        机器学习算法:分类回归算法:linear_model/ensemble/tree/svm/neighbors/gaussian_process/naive_bayes
+		     聚类算法:cluster
+		     深度学习和决策反馈学习用到pytorch，finrl框架
+交易策略：
+股票、期货、债券、期权市场，无论交易周期长还是短，通用的都是博弈过程，带来价格的偏离和回归，计算线性统计指标跟踪偏离程度，做出趋势交易判断或回归交易判断，因此任何统计指标在一段时间内都是有效的。此跟踪预测价格的行为与监督学习实质一致。而决策反馈学习，是利用前期对自身交易的亏损做修改和经验提升，以此形成能应对任何市场的参数调整，其中可穿插用到深度学习来对此次决策预测结果。比较来看，传统策略强调价格预测，决策反馈学习强调不对市场预测，从市场有效性来说，交易需要不做预测，更强调风险控制。在经典策略中，往往更强调仓位风险管理的策略能取得更好表现，如网格策略，Rbreaker,海龟交易策略，要么强调浮亏时加仓摆脱亏损，要么强调浮盈时加仓放大利润，同时开仓价格大抵固定，意味着并不预测最新价格，而双均线、macd等统计指标策略更强调价格预测的准确性，追求每一次开仓价格的正确，同理适用于分类回归算法，认为价格与某项指标高度相关，通过90%正确率预测某项指标从而达到高胜率预测价格的目的，缺点在于难以考虑到基本面因素、交易因素等所有因素对价格的影响，从而预测结果难以囊括所有市场情况。因此，将反馈决策过程应用在网格等策略上，是对交易的正确解释,实质是通过使用反馈决策学习的过程优化出最好的网格交易参数，从而代替交易员对网格参数的设定。
+
+20220701
+达标:420000  /  66 = 7000
+期初资金:1000000 余额:993250 盈亏:-6750 -0.67%	未达标
+
+20220705
+rb2110 4270-4190-4110 mid 4190 r=80 -> mid=4190 r=40 4150-4190-4230 lot=20
+sc2208 725-? -> lot=1 09:24-> 725-733-741 mid=733 r=8 -> mid=733 r=4 729-733-737
+p2209 9350-8950-8550 mid=8950 r=400 -> r=200 9150-8950-8750 lot=10 -> mid=8850 r=100 8750-8850-8950
+cu2208 62800-61600-60040 mid=61600 r=1200 -> mid=61600 r=600 61000-61600-62220 lot=2 -> mid=61300 r=300 -> 61150-61300-61450 mid=61300 r=150
+ni2208 178000-172000-166000 mid=172000 r=6000 -> mid=172000 r=3000 175000-172000-169000 lot=2 -> mid=172000 r=1500 173500-172000-170500 
+ic2207 6000-6250-6500 mid=6250 r=250 -> mid=6500 r=125
+仅两日，本次交易再次失败
+比较发现，更适合的软件还是基于vnpy的无限易
+
+20220706
+pythonGo复现期货套利策略
+分析期权交易策略:衍生品交易中，期货、期权需要搭配使用
+从市场判断出发，
+	当空仓时，信号发出判断，
+		认为上涨空间巨大，则买入看涨期权
+			若认为上涨空间增加，则额外赚权利金->卖出看跌期权
+			若认为上涨空间减少，则额外付出权利金减少风险->卖出虚值看涨期权
+		认为下跌空间巨大，则买入看跌期权
+			若认为下跌空间增加，则额外赚权利金->卖出看涨期权
+			若认为上涨空间减少，则额外付出权利金减少风险->卖出虚值看跌期权
+		若认为小幅震荡，则卖出期权赚权利金，卖出平值看涨期权+卖出平值看跌期权
+		     大幅震荡，则卖出期权赚权利金，卖出虚值跨式	
+	当持有空头期货，止损时付出权利金，做保护性看涨(买入看涨期权）
+		delta正，虚值~0，平值~0.5，实值~1
+		gamma正，接近行权时，gamma最大
+		vega正，做多波动率，波动率变大，有利
+		theta负，接近行权时，theta时间价值~0
+	当持有多头期货，止损时付出权利金，做保护性看跌(买入看跌期权)
+		建立期权头寸对冲后，需根据系数动态调整
+		delta负，虚值~0，平值~-0.5，实值~-1
+		gamma正，接近行权时，gamma最大
+		vega正，做多波动率，波动率变大，有利
+		theta负，接近行权时，theta时间价值~0
+
+20220708
+量化框架 pythonGo
+	策略模板 CtaTemplate.py
+		CtaTemplate()
+			__init__(ctaEngine, setting)
+			onUpdate(setting)
+			setQtSp()
+			subSymbol()
+			unSubSymbol()
+			setParam(setting)
+			getParam()
+			getParamOrgin()
+			getVar()
+			onInit()
+			onStart()
+			manage_position(index:int=1)
+			onStop()
+			onTick(tick)
+			onContractStatus(contractStatus)
+			onOrderCancel(order)
+			onOrderTrade(order)
+			onOrder(order, log=False)
+			onErr(error)
+			onTimer(tid)
+			onTrade(trade, log=True)
+			onBar(bar)
+			onXminBar(bar)
+			execSignal(volume)
+			sell_y(price, volume, symbol='', exchange='', stop=False, investor='')
+			sell_t()
+			buy()
+			short()
+			sell()
+			cover()
+			cover_y()
+			cover_t()
+			buy_fok()
+			sell_fok()
+			short_fok()
+			cover_fok()
+			buy_fak()
+			sell_fak()
+			short_fak()
+			cover_fak()
+			sendOrder()
+			sendOrderFOK()
+			senOrderFAK()	
+			sendOrderMarketFAK()
+			cancelOrder(vtOrderID)
+			loadDay(years, symbol='', exchange='', func=None)
+			deleteDuplicate(lst:list)
+			loadBar(days:int, symbol=None, exchange=None, func=None, qt_gui=False)
+			loadTick(days)
+			getGui()
+			closeGui()
+			get_investor_account(investor:str)
+			get_investor_cost(symbol, investor='')
+			get_contract(exchange, symbol)
+			get_InstListByExchAndProduct(exchange:str, product:str)
+			get_investor(index=1)
+			load_file()
+			regTimer(tid, mSecs)
+			getInvestorPosition(investorID:str)
+			output(content:Any)
+			writeCtaLog()
+			putEvent()
+			StartGui()
+		BarManager(object)
+			__init__(onBar, xmin=0, onXminBar=None)
+			updateTick(tick)
+			updateBar(bar)
+		ArrayManager(object)
+			__init__(size=100, maxsize=None, bars=None)
+			updateBar(bar)
+			sma(n, array=False)
+			std()
+			cci()
+			kd()
+			hhv()
+			llv()
+			kdj()
+			macdxt()
+			atr()
+			rsi()
+			macd()
+			adx()
+			peak()
+			boll()
+			keltner()
+			donchian()
+		QtGuiSupport()
+			__init__()
+			showStrategyWidget()
+			closeStrategyWidget()
+		KLWidget()
+			__init__()
+			initUi()
+			addBar()
+			updateBar()
+			loadBar()
+			clear()
+			poltSub()
+			updateData()
+			plotMain()
+			closeEvent()
+			
+	期权策略模板 CtaTemplate_option.py
+		CtaTemplate_option()
+			close()
+		BarManager()
+		ArrayManager()
+			kama()
+			aroon()
+			bop()
+			cmo()
+			willr()
+			ht_dcperiod()
+			beta()
+			correl()
+			linear()
+			linear_inter()
+			linear_slope()
+			tsf()
+			var()
+			two_crows()
+			three_black_crows()
+		Option()
+			BS模型
+				BS_price()
+				BS_Delta()
+				BS_Gamma()
+				BS_Vega()
+				BS_Theta()
+				BS_Rho()
+				BS_IV()
+				BS_IV_newton()
+				BS_IV_optimize()
+				BS_IV_root()
+			二叉树模型
+				CRR_m()
+			最小二乘法定价
+				Lsm()
+			Baw期权模型定价
+				Baw_func()
+				Baw_price()
+			三叉树定价模型
+				Back_tree_m()
+		Montecarlo()场外期权定价
+			Analog()
+	数据结构 VtObject.py
+		VtBaseData()
+		VtTickData()
+		VtTradeData()
+		VtOrderData()
+		VtBarData()
+		VtPositionData()
+		VtAccountData()
+		VtContractData()
+		VtContractStatusData()
+		方法：
+		importStrategy()
+		safeDatetime()
+		safeCall()
+		onExit()
+	常用数据处理函数 vtFunction.py
+		loadJson()
+		writeJson()
+		todayDate()
+	图形界面 uiKLine.py
+		KeyWrapper()
+		CustomViewBox()
+		MyStringAxis()
+		CandlestickItem()
+		KLineWidget()
+	基础常量 catBase.py
+		StopOrder()
+		CtaBarData()
+		CtaTickData()
+		CtaCapData()
+
+
+使用案例：
+CointegrationTest.py
+	class CointegrationTest(CtaTemplate):
+
+		paramList[]
+		varList[]
+		paramMap{}
+		varMap{}
+
+		def __init__(self, ctaEngine=None, setting={}):
+		    super(CointegrationTest,self).__init__(ctaEngine,setting)
+		    self.bm
+		    self.bm1
+		    self.orderID
+		    self.orderID1
+
+		def onTick(self, tick):
+		    super(CointegrationTest, self).onTick(tick)
+		
+		def onBar(self, bar):
+		    
+		def loadBar(self, days, symbol='', exchange=''):
+		    super(CointegrationTest, self).loadBar(days)
+
+		def onTrade(self, trade):
+		    super(CointegrationTest, self).onTrade(trade, log=True) 
+		
+		def onOrderCancel(order):
+
+		def onOrderTrade(order):
+
+		def onStart():
+		    super(CointegrationTest, self).onStart()
+		
+Demo_DMA.py
+	class Demo_DMA(CtaTemplate):
+		def __init__(self, catEngine=True, setting={})
+		    super().__init__(ctaEngine, setting)
+		
+		def onTick(tick):
+		    super().onTick(tick)
+		
+		def onBar(bar):
+			
+		def onBarX(bar):
+		    self.getCtaIndicator(bar)
+		    self.getCtaSignal(bar)
+		    self.execSignal(self.volume)
+		    self.putEvent()
+		
+		def getCtaIndicator(bar):
+		
+		def getCtaSignal(bar):
+		
+		def exeSignal(volume):
+
+		def onTrade(trade, log=False):
+		    super().onTrade(trade, log)
+
+		def onInit():
+		    super().onInit()
+
+		def onStart():
+		    super().onStart()
+
+		def onStop():
+		    super().onStop()
+
+202207111
+理财产品的设计，需要贴合用户风险偏好，同时相比同类型其他产品需要有突出优势，二级市场主要投资标的为股票和期货产品，0617分析中股票产品着力在
+ 		 
+
