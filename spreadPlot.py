@@ -116,11 +116,10 @@ class analyse:
         dfSortOrders = dfOrders.sort_values("insert_time", ignore_index= True)
         dfSortOrders.to_csv("orders.csv")
         pass
-    
+
 def ui(api):
     klines1 = api.get_tick_serial("SHFE.ag2207", data_length = 1800)
     klines2 = api.get_tick_serial("SHFE.ag2206", data_length = 1800)
-
     plt.ion()
     # Create a figure and a set of subplots.
     figure, ax = plt.subplots()
@@ -147,13 +146,12 @@ def ui(api):
         # draw and flush the figure .
         figure.canvas.draw()
         figure.canvas.flush_events()
-
         # print(klines1["open"])
         sleep(1)
 
 def main():
-    simnowAccout = TqAccount(broker_id= "simnow", account_id= "138411", password= "15221shuai")
-    api = TqApi(account= simnowAccout, auth= TqAuth( "15221624883", "15221shuai"))
+    simnowAccout = TqAccount(broker_id= "simnow", account_id= "", password= "")
+    api = TqApi(account= simnowAccout, auth= TqAuth( "", ""))
     legA = "ag2207"
     legB = "ag2206"
 
