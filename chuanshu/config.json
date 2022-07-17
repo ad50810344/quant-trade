@@ -1,0 +1,18 @@
+{
+    "ticker1": "cu2203.SHFE",
+    "ticker2": "cu2204.SHFE",
+
+    "avgSprAsk": 0.01,
+    "avgSprBid": 0.01,
+
+    "hisOrderStatus1": {
+        "total_amount": 10000,
+        "total_volume": -3,
+        "fee": 1.0
+    },
+    "hisOrderStatus2": {
+        "total_amount": 10000,
+        "total_volume": 3,
+        "fee": 1.0
+    }
+}
